@@ -1,0 +1,116 @@
+module.exports = {
+  docs: [
+    {
+      type: 'doc',
+      id: 'index',
+      label: 'Pengenalan',
+    },
+    {
+      type: 'category',
+      label: 'Writing First Contract',
+      collapsed: false,
+      items: [
+        {
+          type: 'category',
+          label: 'EVM',
+          collapsed: false,
+          link: {
+            type: 'doc',
+            id: 'evm/index',
+          },
+          items: [
+            'evm/goals',
+            {
+              type: 'category',
+              label: 'Foundry & OpenZeppelin',
+              collapsed: true,
+              items: [
+                'evm/foundry-openzeppelin/index',
+                'evm/foundry-openzeppelin/installation',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Materi Pengantar',
+              collapsed: true,
+              items: [
+                {
+                  type: 'category',
+                  label: 'ERC20',
+                  collapsed: true,
+                  items: [
+                    'evm/materi-pengantar/erc20/index',
+                    'evm/materi-pengantar/erc20/name-symbol',
+                    'evm/materi-pengantar/erc20/decimal',
+                    'evm/materi-pengantar/erc20/supply',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Ownable',
+                  collapsed: true,
+                  items: [
+                    'evm/materi-pengantar/ownable/index',
+                    'evm/materi-pengantar/ownable/only-owner',
+                    'evm/materi-pengantar/ownable/ownership',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Reentrancy',
+                  collapsed: true,
+                  items: [
+                    'evm/materi-pengantar/reentrancy/index',
+                    'evm/materi-pengantar/reentrancy/attack-example',
+                    'evm/materi-pengantar/reentrancy/behavior',
+                  ],
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Implementasi',
+              collapsed: true,
+              items: [
+                {
+                  type: 'category',
+                  label: 'ERC20 Token',
+                  collapsed: true,
+                  items: [
+                    'evm/implementasi/erc20-token/index',
+                    'evm/implementasi/erc20-token/name',
+                    'evm/implementasi/erc20-token/decimal',
+                    'evm/implementasi/erc20-token/supply',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Vault Contract',
+                  collapsed: true,
+                  items: [
+                    'evm/implementasi/vault/index',
+                    'evm/implementasi/vault/receive-token',
+                    'evm/implementasi/vault/shares',
+                    'evm/implementasi/vault/custom-error',
+                    'evm/implementasi/vault/events',
+                  ],
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Unit Test',
+              collapsed: true,
+              items: [
+                'evm/unit-test/index',
+                'evm/unit-test/verbosity',
+              ],
+            },
+            'evm/common-mistakes',
+            'evm/conclusion',
+          ],
+        },
+      ],
+    },
+  ],
+};

@@ -1,0 +1,148 @@
+const path = require('path');
+
+const BASE_URL = '/';
+
+module.exports = {
+  title: 'DevWeb3Jogja',
+  tagline: 'Dokumentasi pembelajaran Web3 development untuk komunitas DevWeb3Jogja',
+  url: 'https://devweb3jogja.id', // Ganti dengan URL production kamu
+  baseUrl: BASE_URL,
+  i18n: {
+    defaultLocale: 'id',
+    locales: ['id'],
+    localeConfigs: {
+      id: { label: 'Bahasa Indonesia' },
+    },
+  },
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+  favicon: 'img/favicon.ico',
+  organizationName: 'devweb3jogja',
+  projectName: 'devweb3jogja-docs',
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      {
+        docs: {
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/devweb3jogja/docs/edit/main/',
+        },
+        blog: false, // Disable blog
+        theme: {
+          customCss: [
+            require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
+            require.resolve('./src/styles/custom.scss'),
+          ],
+        },
+      },
+    ],
+  ],
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  themeConfig: {
+    metadata: [
+      { name: 'og:image', content: 'https://devweb3jogja.id/img/og-image.png' },
+      { name: 'twitter:image', content: 'https://devweb3jogja.id/img/og-image.png' },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'og:type',
+        content: 'website',
+      },
+      {
+        name: 'og:site_name',
+        content: 'DevWeb3Jogja Docs',
+      },
+    ],
+    colorMode: {
+      defaultMode: 'dark', // Default dark mode sesuai preferensi hitam
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
+    navbar: {
+      hideOnScroll: true,
+      title: 'DevWeb3Jogja',
+      logo: {
+        alt: 'DevWeb3Jogja Logo',
+        src: 'img/logo.svg',
+        srcDark: 'img/logo-dark.svg',
+        href: '/',
+        target: '_self',
+      },
+      items: [
+        {
+          type: 'doc',
+          docId: 'index',
+          label: 'Docs',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          docId: 'evm/index',
+          label: 'EVM',
+          position: 'left',
+        },
+        {
+          type: 'search',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/devweb3jogja',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
+        },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Getting Started',
+              to: '/',
+            },
+            {
+              label: 'EVM',
+              to: '/evm',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/devweb3jogja',
+            },
+            // Tambahkan link sosmed lainnya di sini
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} DevWeb3Jogja. Built with Docusaurus.`,
+    },
+    prism: {
+      theme: { plain: {}, styles: [] },
+      darkTheme: { plain: {}, styles: [] },
+      additionalLanguages: ['solidity', 'bash', 'json', 'diff'],
+    },
+    // Algolia DocSearch - perlu setup terpisah di https://docsearch.algolia.com/
+    // Uncomment setelah mendapatkan credentials dari Algolia
+    // algolia: {
+    //   appId: 'YOUR_APP_ID',
+    //   apiKey: 'YOUR_SEARCH_API_KEY',
+    //   indexName: 'devweb3jogja',
+    //   contextualSearch: true,
+    // },
+  },
+  plugins: [
+    'docusaurus-plugin-sass',
+  ],
+  customFields: {},
+  themes: [],
+};
