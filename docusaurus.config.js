@@ -1,11 +1,11 @@
 const path = require('path');
 
-const BASE_URL = '/';
+const BASE_URL = '/docs-devweb3jogja/';
 
 module.exports = {
   title: 'DevWeb3Jogja',
   tagline: 'Dokumentasi pembelajaran Web3 development untuk komunitas DevWeb3Jogja',
-  url: 'https://devweb3jogja.id', // Ganti dengan URL production kamu
+  url: 'https://DevWeb3Jogja.github.io', // Ganti dengan URL production kamu
   baseUrl: BASE_URL,
   i18n: {
     defaultLocale: 'id',
@@ -17,8 +17,9 @@ module.exports = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'devweb3jogja',
-  projectName: 'devweb3jogja-docs',
+  organizationName: 'DevWeb3Jogja',
+  projectName: 'docs-devweb3jogja',
+  trailingSlash: true,
   presets: [
     [
       '@docusaurus/preset-classic',
