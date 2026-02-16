@@ -16,7 +16,7 @@ module.exports = {
   },
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'image/devweb3jogja.jpg',
   organizationName: 'DevWeb3Jogja',
   projectName: 'docs-devweb3jogja',
   trailingSlash: true,
@@ -68,8 +68,8 @@ module.exports = {
       title: 'DevWeb3Jogja',
       logo: {
         alt: 'DevWeb3Jogja Logo',
-        src: 'img/logo.svg',
-        srcDark: 'img/logo-dark.svg',
+        src: 'image/devweb3jogja2.jpg',
+        srcDark: 'image/devweb3jogja2.jpg',
         href: '/',
         target: '_self',
       },
@@ -102,30 +102,106 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: '📚 Learning Resources',
           items: [
             {
               label: 'Getting Started',
               to: '/',
             },
             {
-              label: 'EVM',
+              label: 'EVM Basics',
               to: '/evm',
+            },
+            {
+              label: 'Smart Contracts',
+              to: '/evm/smart-contract',
+            },
+            {
+              label: 'Developer Tools',
+              to: '/developer-tools',
             },
           ],
         },
         {
-          title: 'Community',
+          title: '🛠️ Tools & Resources',
+          items: [
+            {
+              label: 'Hardhat',
+              to: '/developer-tools/hardhat',
+            },
+            {
+              label: 'Foundry',
+              to: '/developer-tools/foundry',
+            },
+            {
+              label: 'Ethers.js',
+              to: '/developer-tools/ethers',
+            },
+            {
+              label: 'Viem',
+              to: '/developer-tools/viem',
+            },
+          ],
+        },
+        {
+          title: '🌐 Community',
           items: [
             {
               label: 'GitHub',
               href: 'https://github.com/devweb3jogja',
             },
-            // Tambahkan link sosmed lainnya di sini
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/devweb3jogja',
+            },
+            {
+              label: 'Discord',
+              href: 'https://discord.gg/devweb3jogja',
+            },
+            {
+              label: 'Telegram',
+              href: 'https://t.me/devweb3jogja',
+            },
+          ],
+        },
+        {
+          title: '⚡ More',
+          items: [
+            {
+              label: 'Blog',
+              href: 'https://devweb3jogja.id/blog',
+            },
+            {
+              label: 'Events',
+              href: 'https://devweb3jogja.id/events',
+            },
+            {
+              label: 'About Us',
+              href: 'https://devweb3jogja.id/about',
+            },
+            {
+              label: 'Contact',
+              href: 'https://devweb3jogja.id/contact',
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} DevWeb3Jogja. Built with Docusaurus.`,
+      logo: {
+        alt: 'DevWeb3Jogja Logo',
+        src: 'image/devweb3jogja2.jpg',
+        href: 'https://devweb3jogja.id',
+        width: 160,
+        height: 51,
+      },
+      copyright: `
+        <div style="margin-top: 20px;">
+          <strong>DevWeb3Jogja</strong> - Komunitas Web3 Developer Yogyakarta
+          <br/>
+          Copyright © ${new Date().getFullYear()} DevWeb3Jogja. Built with ❤️ using Docusaurus.
+          <br/>
+          <em style="font-size: 0.85em; opacity: 0.8;">Belajar, Berbagi, Berkembang bersama Web3</em>
+        </div>
+      `,
     },
     prism: {
       theme: { plain: {}, styles: [] },

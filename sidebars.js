@@ -112,5 +112,26 @@ module.exports = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Developer Tools',
+      collapsed: true,
+      items: [
+        'developer-tools/index',
+        'developer-tools/ponder/index',
+        'developer-tools/viem/index',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Advanced Topics',
+      collapsed: true,
+      items: [
+        'advanced-topics/index',
+        'advanced-topics/uniswap-v4-hooks/index',
+        'advanced-topics/uups-upgradeable/index',
+        'advanced-topics/x402-protocol/index',
+      ],
+    }
   ],
 };
