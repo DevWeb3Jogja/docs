@@ -1,6 +1,6 @@
 ---
 title: Verbosity
-sidebar_label: Verbosity
+sidebar_label: Menggunakan Verbosity
 ---
 
 # Menggunakan Verbosity
@@ -26,6 +26,8 @@ forge test -vvvv
 
 Untuk debugging, level `-vvv` biasanya sudah cukup untuk melihat di mana tepatnya transaksi gagal dan apa yang terjadi di setiap langkah.
 
+## Menjalankan Test Spesifik
+
 Kamu juga bisa menjalankan test spesifik menggunakan flag `--match-test` atau `--match-contract`:
 
 ```bash
@@ -35,6 +37,8 @@ forge test --match-test "Deposit" -vvv
 # Jalankan hanya test dari kontrak MyVaultTest
 forge test --match-contract MyVaultTest -vvv
 ```
+
+## Gas Report
 
 Jika ingin melihat penggunaan gas per fungsi:
 

@@ -1,6 +1,6 @@
 ---
-title: Receive Token
-sidebar_label: Receive Token
+title: Vault Menerima Token
+sidebar_label: Vault Dapat Menerima Token
 ---
 
 # Vault Dapat Menerima Token

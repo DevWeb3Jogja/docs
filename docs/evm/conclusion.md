@@ -17,8 +17,13 @@ Di bagian ini, kamu sudah mempelajari fondasi penting untuk menulis smart contra
 
 **Tentang desain Vault**: Sistem shares adalah cara elegan untuk merepresentasikan kepemilikan proporsional. Pastikan rumus perhitungan shares sudah benar: perkalian sebelum pembagian, dan validasi bahwa shares yang dihasilkan tidak nol.
 
-**Langkah selanjutnya yang bisa kamu eksplorasi:**
+## Langkah Selanjutnya yang Bisa Kamu Eksplorasi
+
 - Mengintegrasikan yield generation ke dalam Vault (konsep dasar ERC4626).
 - Menulis fuzz test di Foundry menggunakan `function testFuzz_*`.
 - Mempelajari proxy pattern untuk kontrak yang upgradeable.
 - Memahami gas optimization lebih dalam: packing variables, `calldata` vs `memory`, dan penggunaan `immutable`.
+
+---
+
+Terima kasih sudah belajar bersama **DevWeb3Jogja**! 🚀

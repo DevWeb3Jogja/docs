@@ -1,6 +1,6 @@
 ---
-title: Contoh Serangan
-sidebar_label: Contoh Serangan
+title: Contoh Serangan Reentrant
+sidebar_label: Contoh Serangan Reentrant
 ---
 
 # Contoh Serangan Reentrant

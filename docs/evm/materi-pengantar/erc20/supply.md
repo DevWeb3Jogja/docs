@@ -1,6 +1,6 @@
 ---
 title: Supply Token
-sidebar_label: Supply
+sidebar_label: Supply Token
 ---
 
 # Supply Token
@@ -14,8 +14,20 @@ OpenZeppelin menyediakan fungsi internal `_mint(address account, uint256 amount)
 
 Contoh fixed supply di constructor:
 
+Contoh fixed supply di constructor:
+
 ```solidity
 constructor() ERC20("MyToken", "MTK") {
     _mint(msg.sender, 1_000_000 * 10 ** decimals());
+}
+```
+
+## Mintable Supply
+
+Jika ingin token yang bisa di-mint bertahap, tambahkan fungsi mint yang dilindungi `onlyOwner`:
+
+```solidity
+function mint(address to, uint256 amount) external onlyOwner {
+    _mint(to, amount);
 }
 ```

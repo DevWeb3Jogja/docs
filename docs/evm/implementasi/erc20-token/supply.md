@@ -1,6 +1,6 @@
 ---
 title: Memberi Supply
-sidebar_label: Supply
+sidebar_label: Memberi Supply
 ---
 
 # Memberi Supply

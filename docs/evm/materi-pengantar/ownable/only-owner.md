@@ -3,7 +3,17 @@ title: OnlyOwner
 sidebar_label: OnlyOwner
 ---
 
-# OnlyOwner Modifier
+# OnlyOwner
+
+`onlyOwner` adalah modifier yang disediakan oleh kontrak `Ownable`. Modifier ini memastikan bahwa hanya owner kontrak yang bisa memanggil fungsi yang menggunakannya. Jika bukan owner yang memanggil, transaksi akan di-revert dengan pesan error `OwnableUnauthorizedAccount`.
+
+```solidity
+function mintTokens(address to, uint256 amount) external onlyOwner {
+    _mint(to, amount);
+}
+```
+
+Di balik layar, `onlyOwner` kira-kira setara dengan:
 
 `onlyOwner` adalah modifier yang disediakan oleh kontrak `Ownable`. Modifier ini memastikan bahwa hanya owner kontrak yang bisa memanggil fungsi yang menggunakannya. Jika bukan owner yang memanggil, transaksi akan di-revert dengan pesan error `OwnableUnauthorizedAccount`.
 

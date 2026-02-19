@@ -23,6 +23,8 @@ if (sharesToBurn > shares[msg.sender])
     revert InsufficientShares(sharesToBurn, shares[msg.sender]);
 ```
 
+## Keuntungan Custom Error
+
 Keuntungan custom error dibanding `require(condition, "string message")`:
 
 - Lebih hemat gas karena tidak menyimpan string.

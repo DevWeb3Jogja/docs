@@ -1,6 +1,6 @@
 ---
-title: Behavior
-sidebar_label: Behavior
+title: Reentrancy Behavior
+sidebar_label: Reentrancy Behavior
 ---
 
 # Reentrancy Behavior

@@ -1,6 +1,6 @@
 ---
 title: Instalasi
-sidebar_label: Instalasi
+sidebar_label: Instalasi Foundry dan OpenZeppelin
 ---
 
 # Instalasi Foundry dan OpenZeppelin
@@ -73,6 +73,18 @@ libs = ["lib"]
 remappings = [
     "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
 ]
+```
+
+Atau kamu bisa generate remappings secara otomatis:
+
+```bash
+forge remappings > remappings.txt
+```
+
+Sekarang kamu bisa mengimport OpenZeppelin di kontrak dengan sintaks:
+
+```solidity
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 ```
 
 Atau kamu bisa generate remappings secara otomatis:

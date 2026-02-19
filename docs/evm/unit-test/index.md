@@ -1,6 +1,6 @@
 ---
 title: Unit Test
-sidebar_label: Pengenalan
+sidebar_label: Membuat Kasus Unit Test Sederhana
 ---
 
 # Membuat Kasus Unit Test Sederhana

@@ -1,6 +1,6 @@
 ---
-title: Shares
-sidebar_label: Shares
+title: Perhitungan Shares
+sidebar_label: Perhitungan Shares
 ---
 
 # Perhitungan Shares

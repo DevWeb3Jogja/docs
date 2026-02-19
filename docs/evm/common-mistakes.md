@@ -46,6 +46,8 @@ contract MyToken is ERC20, Ownable {
 }
 ```
 
+---
+
 ## 2. Kesalahan Perhitungan Shares
 
 **Masalah**: Pengguna mendapatkan 0 shares atau jumlah shares yang tidak proporsional.
@@ -60,6 +62,8 @@ Solidity menggunakan integer division, artinya hasil pembagian selalu dibulatkan
 sharesToMint = (amount * totalShares) / totalTokenBalance;
 ```
 
+Contoh masalah: Vault memiliki 1.000.000 MTK dan 1.000.000 shares. Alice deposit 0.0001 MTK (100000000000000 wei). Hasil: `(100000000000000 * 1000000e18) / 1000000e18 = 100000000000000` — ini masih OK. Tapi jika totalShares sudah jauh lebih besar dari totalTokenBalance karena akumulasi presisi, bisa terjadi underflow.
+
 **Solusi**: Selalu validasi `sharesToMint != 0` setelah perhitungan dan gunakan `revert ZeroSharesMinted()`.
 
 **Penyebab 2: Urutan operasi yang salah**
@@ -73,6 +77,8 @@ sharesToMint = (amount * totalShares) / totalTokenBalance;
 ```
 
 Selalu lakukan perkalian lebih dulu sebelum pembagian untuk memaksimalkan presisi.
+
+---
 
 ## 3. Lupa Memanggil approve Sebelum deposit
 
@@ -91,6 +97,8 @@ vault.deposit(amount);
 ```
 
 Dalam konteks test Foundry, kesalahan ini sering menyebabkan test gagal dengan error yang membingungkan. Pastikan `setUp()` atau setiap test case menyertakan langkah approve sebelum deposit.
+
+---
 
 ## 4. Menggunakan tx.origin Sebagai Pengganti msg.sender
 
@@ -118,6 +126,8 @@ require(tx.origin == owner, "Not owner");
 require(msg.sender == owner(), "Not owner");
 // Atau lebih baik, gunakan modifier onlyOwner dari Ownable
 ```
+
+---
 
 ## 5. Tidak Menghandle Return Value dari token.transfer()
 
@@ -147,3 +157,7 @@ contract MyVault {
 ```
 
 `SafeERC20` membungkus fungsi transfer dan secara otomatis merevert jika transfer gagal, bahkan untuk token yang tidak mengikuti standar ERC20 secara ketat.
+
+---
+
+Selanjutnya: [Kesimpulan](/evm/conclusion)

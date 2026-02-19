@@ -1,6 +1,6 @@
 ---
 title: Decimal
-sidebar_label: Decimal
+sidebar_label: Desimal
 ---
 
 # Desimal

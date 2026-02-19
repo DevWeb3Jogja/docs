@@ -1,6 +1,6 @@
 ---
 title: Memberi Desimal
-sidebar_label: Decimal
+sidebar_label: Memberi Desimal
 ---
 
 # Memberi Desimal

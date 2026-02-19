@@ -1,6 +1,6 @@
 ---
-title: Events
-sidebar_label: Events
+title: Emit & Event
+sidebar_label: Emit & Event
 ---
 
 # Emit & Event

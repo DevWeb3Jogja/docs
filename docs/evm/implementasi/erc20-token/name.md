@@ -1,6 +1,6 @@
 ---
 title: Memberi Nama
-sidebar_label: Name
+sidebar_label: Memberi Nama
 ---
 
 # Memberi Nama
