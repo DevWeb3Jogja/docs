@@ -3,7 +3,9 @@ title: Implementasi ERC20
 sidebar_label: Pengenalan
 ---
 
-# Implementasi ERC20 Token
+# Mengimplementasikan ERC20 OpenZeppelin ke MyToken
+
+Buat file `src/MyToken.sol`:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -13,15 +15,14 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract MyToken is ERC20, Ownable {
-    constructor(
-        string memory name,
-        string memory symbol,
-        uint256 initialSupply
-    ) ERC20(name, symbol) Ownable(msg.sender) {
-        _mint(msg.sender, initialSupply * 10**decimals());
+    constructor(address initialOwner)
+        ERC20("MyToken", "MTK")
+        Ownable(initialOwner)
+    {
+        _mint(initialOwner, 1_000_000 * 10 ** decimals());
     }
-    
-    function mint(address to, uint256 amount) public onlyOwner {
+
+    function mint(address to, uint256 amount) external onlyOwner {
         _mint(to, amount);
     }
 }

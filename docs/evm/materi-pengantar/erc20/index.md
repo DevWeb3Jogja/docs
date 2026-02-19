@@ -5,33 +5,24 @@ sidebar_label: Pengenalan
 
 # ERC20 Token Standard
 
-**ERC20** adalah standar teknis untuk token fungible di blockchain Ethereum.
+ERC20 adalah standar token yang paling umum di ekosistem Ethereum. "ERC" singkatan dari Ethereum Request for Comment, dan "20" adalah nomor proposal yang disetujui. Standar ini mendefinisikan satu set fungsi dan event yang harus diimplementasikan oleh setiap kontrak token agar bisa berinteroperasi dengan wallet, exchange, dan aplikasi lainnya.
 
-## Interface ERC20
+## Fungsi Wajib
 
-```solidity
-interface IERC20 {
-    function totalSupply() external view returns (uint256);
-    function balanceOf(address account) external view returns (uint256);
-    function transfer(address to, uint256 amount) external returns (bool);
-    function allowance(address owner, address spender) external view returns (uint256);
-    function approve(address spender, uint256 amount) external returns (bool);
-    function transferFrom(address from, address to, uint256 amount) external returns (bool);
-}
-```
+Fungsi wajib dalam standar ERC20:
 
-## Komponen Utama
+- `totalSupply()`: Mengembalikan total supply token yang beredar.
+- `balanceOf(address account)`: Mengembalikan saldo token milik `account`.
+- `transfer(address to, uint256 amount)`: Mentransfer `amount` token dari `msg.sender` ke `to`.
+- `allowance(address owner, address spender)`: Mengembalikan jumlah token yang diizinkan `owner` untuk dihabiskan oleh `spender`.
+- `approve(address spender, uint256 amount)`: Memberikan izin kepada `spender` untuk menghabiskan hingga `amount` token milik `msg.sender`.
+- `transferFrom(address from, address to, uint256 amount)`: Memindahkan token dari `from` ke `to` menggunakan allowance yang sudah diberikan.
 
-| Komponen | Deskripsi |
-|----------|-----------|
-| **Name** | Nama lengkap token |
-| **Symbol** | Simbol ticker token |
-| **Decimals** | Jumlah desimal (biasanya 18) |
-| **Total Supply** | Total jumlah token |
+## Event
 
----
+Event yang harus dipancarkan:
 
-Pelajari lebih lanjut:
-- [Name & Symbol](/evm/materi-pengantar/erc20/name-symbol)
-- [Decimal](/evm/materi-pengantar/erc20/decimal)
-- [Supply](/evm/materi-pengantar/erc20/supply)
+- `Transfer(address indexed from, address indexed to, uint256 value)`: Dipancarkan setiap kali token berpindah tangan.
+- `Approval(address indexed owner, address indexed spender, uint256 value)`: Dipancarkan setiap kali allowance diubah.
+
+Implementasi OpenZeppelin sudah menangani semua ini secara lengkap dan aman.

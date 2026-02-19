@@ -5,22 +5,15 @@ sidebar_label: Pengenalan
 
 # Foundry & OpenZeppelin
 
-## Apa itu Foundry?
+## Apa itu Foundry dan OpenZeppelin?
 
-**Foundry** adalah toolkit untuk development smart contract Ethereum yang sangat cepat. Ditulis dalam Rust.
+**Foundry** adalah development toolchain untuk Solidity yang ditulis dalam Rust. Foundry jauh lebih cepat dibanding Hardhat untuk task-task seperti kompilasi kontrak dan menjalankan test. Foundry terdiri dari beberapa tools:
 
-### Komponen Foundry:
+- **`forge`**: Digunakan untuk kompilasi, testing, dan deployment kontrak.
+- **`cast`**: CLI untuk berinteraksi dengan blockchain (membaca data, mengirim transaksi).
+- **`anvil`**: Local testnet node (mirip Ganache) yang bisa kamu jalankan secara lokal.
+- **`chisel`**: REPL Solidity interaktif untuk eksperimen cepat.
 
-| Tool | Fungsi |
-|------|--------|
-| **Forge** | Framework untuk testing dan building |
-| **Cast** | CLI untuk berinteraksi dengan EVM |
-| **Anvil** | Local Ethereum node untuk testing |
+Test di Foundry ditulis dalam Solidity sendiri, bukan JavaScript atau TypeScript. Ini keunggulan besar karena kamu tidak perlu berpindah bahasa saat testing.
 
-## Apa itu OpenZeppelin?
-
-**OpenZeppelin Contracts** adalah library smart contract yang sudah diaudit dan menjadi standar industri.
-
----
-
-Lanjut ke [Instalasi](/evm/foundry-openzeppelin/installation).
+**OpenZeppelin** adalah library smart contract yang sudah di-audit secara keamanan dan menjadi standar industri. Library ini menyediakan implementasi siap pakai untuk standar token (ERC20, ERC721, ERC1155), access control, security utilities, dan banyak lagi. Menggunakan OpenZeppelin jauh lebih aman daripada menulis implementasi standar dari nol.

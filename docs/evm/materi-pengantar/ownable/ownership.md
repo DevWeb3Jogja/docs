@@ -5,14 +5,10 @@ sidebar_label: Ownership
 
 # Ownership Contract
 
-## Transfer Ownership
+Kontrak `Ownable` juga menyediakan fungsi untuk manajemen kepemilikan:
 
-```solidity
-contract.transferOwnership(newOwner);
-```
+- `owner()`: Mengembalikan alamat owner saat ini.
+- `transferOwnership(address newOwner)`: Memindahkan kepemilikan ke alamat baru. Hanya bisa dipanggil oleh owner.
+- `renounceOwnership()`: Owner melepaskan kepemilikannya secara permanen. Setelah ini dipanggil, tidak ada lagi yang menjadi owner, dan semua fungsi `onlyOwner` tidak bisa dieksekusi lagi.
 
-## Renounce Ownership
-
-```solidity
-contract.renounceOwnership(); // Irreversible!
-```
+Penting untuk berhati-hati dengan `renounceOwnership()`. Jika kontrakmu memiliki fungsi admin kritis yang menggunakan `onlyOwner`, memanggil `renounceOwnership` akan membuat fungsi-fungsi tersebut terkunci selamanya.

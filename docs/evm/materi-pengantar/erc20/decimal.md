@@ -3,25 +3,19 @@ title: Decimal
 sidebar_label: Decimal
 ---
 
-# Decimal
+# Desimal
 
-Default ERC20 menggunakan **18 decimals**:
+Solidity tidak mendukung angka desimal (floating point). Maka dari itu, token ERC20 menyimulasikan desimal dengan cara membagi nilai integer dengan faktor `10^decimals`.
 
-```solidity
-function decimals() public view virtual returns (uint8) {
-    return 18;
-}
-```
+Nilai default `decimals()` di OpenZeppelin adalah `18`, sama seperti ETH (1 ETH = 10^18 wei). Artinya:
 
-| Nilai Display | Nilai Internal (18 decimals) |
-|---------------|------------------------------|
-| 1 token | 1000000000000000000 |
-| 0.5 token | 500000000000000000 |
+- Jika kamu ingin merepresentasikan `1 MTK`, nilainya di kontrak adalah `1_000_000_000_000_000_000` (atau `1e18`).
+- Jika kamu mint `100 * 10**18`, wallet pengguna akan menampilkan `100 MTK`.
 
-## Custom Decimals
+Kamu bisa override fungsi `decimals()` jika ingin menggunakan nilai lain:
 
 ```solidity
-function decimals() public view virtual override returns (uint8) {
+function decimals() public pure override returns (uint8) {
     return 6; // seperti USDC
 }
 ```

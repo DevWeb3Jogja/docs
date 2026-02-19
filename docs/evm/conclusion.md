@@ -5,89 +5,20 @@ sidebar_label: Kesimpulan
 
 # Kesimpulan
 
-Selamat! 🎉 Kamu sudah menyelesaikan materi **Writing First Contract**.
+Di bagian ini, kamu sudah mempelajari fondasi penting untuk menulis smart contract pertama di ekosistem EVM:
 
-## Yang Sudah Kamu Pelajari
+**Tentang tooling**: Foundry memberikan development experience yang cepat dan efisien. Semua test ditulis dalam Solidity, dan cheatcode seperti `vm.prank`, `vm.expectRevert`, dan `makeAddr` membuat penulisan test lebih ekspresif dan mudah dibaca.
 
-- ✅ Instalasi Foundry dan OpenZeppelin
-- ✅ Konsep ERC20, Ownable, dan Reentrancy
-- ✅ Implementasi MyToken.sol dan Vault.sol
-- ✅ Unit testing dengan Foundry
+**Tentang standar token**: ERC20 adalah standar token fungible yang paling umum. OpenZeppelin menyediakan implementasi yang sudah di-audit dan siap pakai. Kamu tidak perlu menulis implementasi ERC20 dari nol untuk proyek yang serius.
 
-## Kode Lengkap
+**Tentang access control**: Ownable adalah mekanisme access control paling sederhana. Gunakan `onlyOwner` untuk fungsi-fungsi yang seharusnya hanya bisa diakses oleh pemilik kontrak.
 
-### MyToken.sol
+**Tentang keamanan**: Reentrancy adalah vulnerability yang nyata dan berbahaya. Selalu ikuti pola Checks-Effects-Interactions dan pertimbangkan penggunaan `ReentrancyGuard` dari OpenZeppelin untuk fungsi yang melakukan external call.
 
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+**Tentang desain Vault**: Sistem shares adalah cara elegan untuk merepresentasikan kepemilikan proporsional. Pastikan rumus perhitungan shares sudah benar: perkalian sebelum pembagian, dan validasi bahwa shares yang dihasilkan tidak nol.
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-
-contract MyToken is ERC20, Ownable {
-    constructor(
-        string memory name,
-        string memory symbol,
-        uint256 initialSupply
-    ) ERC20(name, symbol) Ownable(msg.sender) {
-        _mint(msg.sender, initialSupply * 10**decimals());
-    }
-    
-    function mint(address to, uint256 amount) public onlyOwner {
-        _mint(to, amount);
-    }
-}
-```
-
-### Vault.sol
-
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
-
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
-
-contract Vault is ERC20, ReentrancyGuard {
-    IERC20 public immutable token;
-    
-    constructor(IERC20 _token) ERC20("Vault Shares", "vSHARE") {
-        token = _token;
-    }
-    
-    function deposit(uint256 amount) public nonReentrant {
-        uint256 shares = _calculateShares(amount);
-        token.transferFrom(msg.sender, address(this), amount);
-        _mint(msg.sender, shares);
-    }
-    
-    function withdraw(uint256 shares) public nonReentrant {
-        uint256 amount = _calculateAmount(shares);
-        _burn(msg.sender, shares);
-        token.transfer(msg.sender, amount);
-    }
-    
-    function _calculateShares(uint256 amount) internal view returns (uint256) {
-        uint256 totalShares = totalSupply();
-        uint256 totalAssets = token.balanceOf(address(this));
-        if (totalShares == 0 || totalAssets == 0) return amount;
-        return (amount * totalShares) / totalAssets;
-    }
-    
-    function _calculateAmount(uint256 shares) internal view returns (uint256) {
-        return (shares * token.balanceOf(address(this))) / totalSupply();
-    }
-}
-```
-
-## Langkah Selanjutnya
-
-- Deploy ke testnet (Sepolia, Mumbai)
-- Belajar tentang ERC721 (NFT)
-- Eksplorasi DeFi protocols
-
----
-
-Terima kasih sudah belajar bersama **DevWeb3Jogja**! 🚀
+**Langkah selanjutnya yang bisa kamu eksplorasi:**
+- Mengintegrasikan yield generation ke dalam Vault (konsep dasar ERC4626).
+- Menulis fuzz test di Foundry menggunakan `function testFuzz_*`.
+- Mempelajari proxy pattern untuk kontrak yang upgradeable.
+- Memahami gas optimization lebih dalam: packing variables, `calldata` vs `memory`, dan penggunaan `immutable`.
