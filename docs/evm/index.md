@@ -22,15 +22,6 @@ Beberapa konsep dasar yang perlu kamu pahami sebelum menulis kontrak:
 
 Setiap operasi di EVM memiliki biaya yang disebut **gas**. Semakin kompleks operasi, semakin besar gas yang dibutuhkan.
 
-## Karakteristik EVM
-
-- **Storage**: Area penyimpanan permanen di blockchain. Setiap variabel state di kontrak tersimpan di sini. Akses ke storage relatif mahal secara gas.
-- **Memory**: Area penyimpanan sementara yang hanya ada selama satu eksekusi fungsi. Lebih murah dari storage.
-- **Calldata**: Area read-only tempat menyimpan argumen yang dikirim ke fungsi dari luar kontrak. Paling murah karena tidak bisa dimodifikasi.
-- **Stack**: Area kerja EVM untuk operasi aritmetika dan logika. Developer tidak mengakses ini secara langsung.
-- **msg.sender**: Alamat yang memanggil fungsi saat ini. Bisa berupa EOA (Externally Owned Account) atau kontrak lain.
-- **msg.value**: Jumlah ETH (dalam wei) yang dikirim bersama dengan pemanggilan fungsi.
-
 ## Bahasa Pemrograman: Solidity
 
 Untuk menulis smart contract yang berjalan di EVM, kita menggunakan bahasa **Solidity**. Solidity adalah bahasa high-level yang mirip dengan JavaScript/C++ yang dikompilasi menjadi bytecode EVM.

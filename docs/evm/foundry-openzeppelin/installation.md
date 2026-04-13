@@ -86,15 +86,3 @@ Sekarang kamu bisa mengimport OpenZeppelin di kontrak dengan sintaks:
 ```solidity
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 ```
-
-Atau kamu bisa generate remappings secara otomatis:
-
-```bash
-forge remappings > remappings.txt
-```
-
-Sekarang kamu bisa mengimport OpenZeppelin di kontrak dengan sintaks:
-
-```solidity
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-```

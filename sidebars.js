@@ -7,6 +7,23 @@ module.exports = {
     },
     {
       type: "category",
+      label: "Blockchain untuk Programmer",
+      collapsed: false,
+      link: {
+        type: "doc",
+        id: "blockchain-untuk-programmer/index",
+      },
+      items: [
+        "blockchain-untuk-programmer/apa-itu-blockchain",
+        "blockchain-untuk-programmer/ethereum-ekosistem",
+        "blockchain-untuk-programmer/wallet-account",
+        "blockchain-untuk-programmer/transaksi-gas",
+        "blockchain-untuk-programmer/smart-contract",
+        "blockchain-untuk-programmer/testnet-tools",
+      ],
+    },
+    {
+      type: "category",
       label: "Writing First Contract",
       collapsed: false,
       items: [

@@ -30,10 +30,3 @@ Event yang harus dipancarkan:
 | `Approval(address indexed owner, address indexed spender, uint256 value)` | Dipancarkan setiap kali allowance diubah |
 
 Implementasi OpenZeppelin sudah menangani semua ini secara lengkap dan aman.
-
-Event yang harus dipancarkan:
-
-- `Transfer(address indexed from, address indexed to, uint256 value)`: Dipancarkan setiap kali token berpindah tangan.
-- `Approval(address indexed owner, address indexed spender, uint256 value)`: Dipancarkan setiap kali allowance diubah.
-
-Implementasi OpenZeppelin sudah menangani semua ini secara lengkap dan aman.

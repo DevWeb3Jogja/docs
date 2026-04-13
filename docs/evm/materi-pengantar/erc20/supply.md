@@ -14,8 +14,6 @@ OpenZeppelin menyediakan fungsi internal `_mint(address account, uint256 amount)
 
 Contoh fixed supply di constructor:
 
-Contoh fixed supply di constructor:
-
 ```solidity
 constructor() ERC20("MyToken", "MTK") {
     _mint(msg.sender, 1_000_000 * 10 ** decimals());
