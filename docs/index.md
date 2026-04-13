@@ -7,28 +7,42 @@ hide_table_of_contents: true
 
 # DevWeb3Jogja Documentation
 
-Selamat datang di dokumentasi pembelajaran Web3 development dari komunitas **DevWeb3Jogja**! 🚀
+Selamat datang di dokumentasi pembelajaran Web3 development dari komunitas **DevWeb3Jogja**!
 
-## Apa yang akan kamu pelajari?
+## Untuk Siapa Dokumentasi Ini?
 
-Dokumentasi ini dirancang untuk membantu kamu memahami dasar-dasar pengembangan smart contract di blockchain EVM (Ethereum Virtual Machine). Kami akan membahas:
+Dokumentasi ini ditujukan untuk **programmer yang ingin masuk ke dunia Web3** — kamu yang sudah bisa coding (JavaScript, Python, Go, atau bahasa apapun), tapi belum pernah menyentuh blockchain atau smart contract.
 
-- **Foundry & OpenZeppelin** - Tools dan library standar industri untuk development
-- **ERC20 Token** - Membuat token standar ERC20
-- **Vault Contract** - Membuat kontrak vault untuk menyimpan token
-- **Unit Testing** - Menulis test untuk smart contract kamu
+Tidak ada prasyarat pengetahuan blockchain. Kita mulai dari nol.
 
-## Prasyarat
+## Struktur Pembelajaran
 
-Sebelum memulai, pastikan kamu sudah familiar dengan:
+### 1. Blockchain untuk Programmer
+Fondasi konseptual yang kamu butuhkan sebelum menulis satu baris kode pun. Blockchain, Ethereum, wallet, transaksi, gas, dan smart contract — semua dijelaskan dengan analogi yang familiar bagi programmer.
 
-- Dasar-dasar programming
-- Penggunaan command line/terminal
-- Konsep dasar blockchain
+**Mulai di sini jika kamu baru di Web3.**
 
-## Memulai
+### 2. Writing First Contract
+Menulis smart contract pertamamu menggunakan Foundry dan OpenZeppelin. Mencakup ERC20 token, vault contract, dan unit testing.
 
-Siap untuk belajar? Mari kita mulai dengan memahami [EVM dan tujuan pembelajaran](/evm).
+### 3. Frontend
+Menghubungkan frontend (React/Next.js) ke smart contract menggunakan wagmi dan viem.
+
+### 4. Developer Tools
+Tools ekosistem Web3: Ponder untuk indexing, viem sebagai library interaksi kontrak.
+
+### 5. Advanced Topics
+Topik lanjutan: Uniswap V4 Hooks, UUPS Upgradeable contracts, dan x402 Protocol.
+
+## Mulai Belajar
+
+Jika kamu baru di Web3, mulai dari sini:
+
+**[Blockchain untuk Programmer →](./blockchain-untuk-programmer/)**
+
+Jika kamu sudah familiar dengan konsep blockchain dan ingin langsung ke kode:
+
+**[Writing First Contract →](./evm/)**
 
 ---
 
