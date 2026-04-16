@@ -124,19 +124,6 @@ html[data-theme='light'] {
         padding: 0.15em 0.45em;
     }
 
-    /* Code blocks */
-    pre {
-        margin: 1.5rem 0;
-        border-radius: 10px;
-        border: 1px solid var(--ifm-color-emphasis-200);
-
-        code {
-            padding: 0;
-            font-size: 0.875rem;
-            line-height: 1.65;
-        }
-    }
-
     /* Table */
     table {
         margin: 1.75rem 0;
@@ -184,7 +171,129 @@ html[data-theme='light'] {
     padding-top: 0.25rem;
 }
 
-/* Admonition / callout boxes */
+/* ============================================================
+   CODE BLOCK ENHANCED STYLING
+   ============================================================ */
+
+/* Code block container */
+.theme-code-block {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--ifm-color-emphasis-200);
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+}
+
+html[data-theme='dark'] .theme-code-block {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    background-color: #1a1a2e;
+
+    &:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    }
+}
+
+html[data-theme='light'] .theme-code-block {
+    background-color: #f8f9fc;
+}
+
+/* Code block title bar (filename) */
+.theme-code-block div[class*='codeBlockTitle'] {
+    background-color: rgba(59, 130, 246, 0.08);
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ifm-font-color-secondary);
+}
+
+html[data-theme='dark'] .theme-code-block div[class*='codeBlockTitle'] {
+    background-color: rgba(59, 130, 246, 0.12);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Copy / action buttons - top right overlay */
+.theme-code-block div[class*='buttonGroup'] {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 2;
+    display: flex;
+    gap: 0.25rem;
+
+    button {
+        background: var(--ifm-background-color);
+        border: 1px solid var(--ifm-color-emphasis-300);
+        border-radius: 6px;
+        padding: 0.35rem;
+        opacity: 0;
+        transition: opacity 0.15s ease, background 0.15s ease;
+        backdrop-filter: blur(4px);
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1 !important;
+            background: var(--ifm-color-primary);
+            color: #fff;
+            border-color: var(--ifm-color-primary);
+        }
+
+        &:focus-visible {
+            opacity: 1 !important;
+        }
+    }
+}
+
+.theme-code-block:hover div[class*='buttonGroup'] button {
+    opacity: 0.6;
+}
+
+html[data-theme='dark'] .theme-code-block div[class*='buttonGroup'] button {
+    background: rgba(30, 30, 50, 0.85);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+html[data-theme='light'] .theme-code-block div[class*='buttonGroup'] button {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove duplicate pre border/margin since .theme-code-block handles it */
+.theme-code-block pre {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent !important;
+    min-height: 3.2rem;
+    display: flex;
+    align-items: center;
+
+    code {
+        font-size: 0.875rem;
+        line-height: 1.65;
+        padding-right: 3rem;
+    }
+}
+
+/* Line numbers styling */
+.theme-code-block span[class*='codeLineNumber'] {
+    color: var(--ifm-color-emphasis-500);
+    min-width: 2rem;
+    user-select: none;
+}
+
+/* ============================================================
+   ADMONITION / CALLOUT BOXES
+   ============================================================ */
+
 .admonition {
     margin: 1.75rem 0;
     border-radius: 8px;
@@ -207,6 +316,103 @@ html[data-theme='light'] {
     margin: 2rem auto;
     border-radius: 10px;
     border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+    padding: 1.5rem 0 1rem;
+    font-size: 0.85rem;
+}
+
+/* Footer container: full width, logo kiri | docs+community kanan */
+.footer .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 6rem;
+}
+
+/* Logo + copyright di kiri */
+.footer .footer__bottom {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    flex-shrink: 0;
+}
+
+.footer .footer__logo {
+    margin: 0;
+
+    img {
+        height: 32px;
+        width: auto;
+    }
+}
+
+.footer .footer__copyright {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+/* Docs + Community: rapat, di kanan */
+.footer .row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 3rem;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.footer .footer__col {
+    min-width: 150px;
+}
+
+/* Smaller title */
+.footer .footer__title {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Tighter link spacing */
+.footer .footer__items {
+    .footer__item {
+        margin-bottom: 0.25rem;
+    }
+
+    .footer__link-item {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .footer__bottom {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer .row {
+        justify-content: center;
+        gap: 2rem;
+    }
 }
 
 /* ============================================================
