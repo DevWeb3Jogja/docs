@@ -9,6 +9,8 @@ EVM (Ethereum Virtual Machine) adalah mesin komputasi yang berjalan di atas jari
 
 Smart contract yang kamu tulis dalam Solidity tidak langsung dieksekusi oleh mesin fisik. Solidity dikompilasi terlebih dahulu menjadi **bytecode**, yang kemudian dieksekusi oleh EVM. Proses ini mirip seperti Java yang dikompilasi ke bytecode JVM, lalu dieksekusi oleh JVM.
 
+![Arsitektur EVM: lapisan Calldata, Memory, Stack, dan Storage dengan indikator biaya gas](/image/evm-architecture.svg)
+
 ## Konsep Dasar EVM
 
 Beberapa konsep dasar yang perlu kamu pahami sebelum menulis kontrak:
@@ -35,6 +37,8 @@ contract HelloWorld {
     string public message = "Hello, DevWeb3Jogja!";
 }
 ```
+
+![Lifecycle smart contract: Write (Solidity) → Compile (Bytecode + ABI) → Deploy (On-chain)](/image/smart-contract-lifecycle.svg)
 
 ## Apa yang akan kita pelajari?
 

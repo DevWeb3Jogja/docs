@@ -102,7 +102,7 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: '📚 Learning Resources',
+          title: 'Docs',
           items: [
             {
               label: 'Getting Started',
@@ -113,38 +113,13 @@ module.exports = {
               to: '/evm',
             },
             {
-              label: 'Smart Contracts',
-              to: '/evm/smart-contract',
-            },
-            {
               label: 'Developer Tools',
               to: '/developer-tools',
             },
           ],
         },
         {
-          title: '🛠️ Tools & Resources',
-          items: [
-            {
-              label: 'Hardhat',
-              to: '/developer-tools/hardhat',
-            },
-            {
-              label: 'Foundry',
-              to: '/developer-tools/foundry',
-            },
-            {
-              label: 'Ethers.js',
-              to: '/developer-tools/ethers',
-            },
-            {
-              label: 'Viem',
-              to: '/developer-tools/viem',
-            },
-          ],
-        },
-        {
-          title: '🌐 Community',
+          title: 'Community',
           items: [
             {
               label: 'GitHub',
@@ -155,33 +130,8 @@ module.exports = {
               href: 'https://twitter.com/devweb3jogja',
             },
             {
-              label: 'Discord',
-              href: 'https://discord.gg/devweb3jogja',
-            },
-            {
               label: 'Telegram',
               href: 'https://t.me/devweb3jogja',
-            },
-          ],
-        },
-        {
-          title: '⚡ More',
-          items: [
-            {
-              label: 'Blog',
-              href: 'https://devweb3jogja.id/blog',
-            },
-            {
-              label: 'Events',
-              href: 'https://devweb3jogja.id/events',
-            },
-            {
-              label: 'About Us',
-              href: 'https://devweb3jogja.id/about',
-            },
-            {
-              label: 'Contact',
-              href: 'https://devweb3jogja.id/contact',
             },
           ],
         },
@@ -190,18 +140,9 @@ module.exports = {
         alt: 'DevWeb3Jogja Logo',
         src: 'image/devweb3jogja2.jpg',
         href: 'https://devweb3jogja.id',
-        width: 160,
-        height: 51,
+        width: 120,
       },
-      copyright: `
-        <div style="margin-top: 20px;">
-          <strong>DevWeb3Jogja</strong> - Komunitas Web3 Developer Yogyakarta
-          <br/>
-          Copyright © ${new Date().getFullYear()} DevWeb3Jogja. Built with ❤️ using Docusaurus.
-          <br/>
-          <em style="font-size: 0.85em; opacity: 0.8;">Belajar, Berbagi, Berkembang bersama Web3</em>
-        </div>
-      `,
+      copyright: `Copyright © ${new Date().getFullYear()} DevWeb3Jogja`,
     },
     prism: {
       theme: { plain: {}, styles: [] },

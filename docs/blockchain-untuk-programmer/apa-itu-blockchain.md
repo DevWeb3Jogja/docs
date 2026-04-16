@@ -7,6 +7,8 @@ sidebar_label: Apa itu Blockchain?
 
 Sebelum masuk ke Ethereum dan smart contract, kita perlu membangun mental model yang benar tentang blockchain. Dan cara termudah untuk membangunnya adalah dari analogi yang sudah kamu kenal sebagai programmer.
 
+![Ilustrasi jaringan blockchain: node-node terhubung satu sama lain secara peer-to-peer dengan blok-blok yang berrantai di tengah](/image/blockchain-network.svg)
+
 ## Bayangkan Database yang Tidak Dimiliki Siapa-siapa
 
 Kamu terbiasa dengan database. PostgreSQL, MySQL, MongoDB — semuanya punya satu kesamaan: **ada server yang menghosting-nya, dan ada pemiliknya**. Kalau AWS mengalami gangguan, database-mu down. Kalau perusahaanmu tutup, database-mu hilang. Kalau pemilik database memutuskan menghapus datamu, data itu hilang.

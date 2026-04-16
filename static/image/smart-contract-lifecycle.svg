@@ -1,0 +1,188 @@
+<svg width="900" height="340" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0d1520"/>
+    </linearGradient>
+    <radialGradient id="cardGlow1" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cardGlow2" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="arrowGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowHead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <polygon points="0 0, 7 3, 0 6" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowHeadGlow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <polygon points="0 0, 7 3, 0 6" fill="#60a5fa"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="340" fill="#0a0a0a"/>
+
+  <!-- Subtle dot grid -->
+  <g opacity="0.06">
+    <circle cx="75"  cy="60"  r="1.5" fill="#3b82f6"/>
+    <circle cx="150" cy="60"  r="1.5" fill="#3b82f6"/>
+    <circle cx="225" cy="60"  r="1.5" fill="#3b82f6"/>
+    <circle cx="300" cy="60"  r="1.5" fill="#3b82f6"/>
+    <circle cx="375" cy="60"  r="1.5" fill="#3b82f6"/>
+    <circle cx="450" cy="60"  r="1.5" fill="#3b82f6"/>
+    <circle cx="525" cy="60"  r="1.5" fill="#3b82f6"/>
+    <circle cx="600" cy="60"  r="1.5" fill="#3b82f6"/>
+    <circle cx="675" cy="60"  r="1.5" fill="#3b82f6"/>
+    <circle cx="750" cy="60"  r="1.5" fill="#3b82f6"/>
+    <circle cx="825" cy="60"  r="1.5" fill="#3b82f6"/>
+    <circle cx="75"  cy="170" r="1.5" fill="#3b82f6"/>
+    <circle cx="150" cy="170" r="1.5" fill="#3b82f6"/>
+    <circle cx="225" cy="170" r="1.5" fill="#3b82f6"/>
+    <circle cx="300" cy="170" r="1.5" fill="#3b82f6"/>
+    <circle cx="375" cy="170" r="1.5" fill="#3b82f6"/>
+    <circle cx="450" cy="170" r="1.5" fill="#3b82f6"/>
+    <circle cx="525" cy="170" r="1.5" fill="#3b82f6"/>
+    <circle cx="600" cy="170" r="1.5" fill="#3b82f6"/>
+    <circle cx="675" cy="170" r="1.5" fill="#3b82f6"/>
+    <circle cx="750" cy="170" r="1.5" fill="#3b82f6"/>
+    <circle cx="825" cy="170" r="1.5" fill="#3b82f6"/>
+    <circle cx="75"  cy="280" r="1.5" fill="#3b82f6"/>
+    <circle cx="150" cy="280" r="1.5" fill="#3b82f6"/>
+    <circle cx="225" cy="280" r="1.5" fill="#3b82f6"/>
+    <circle cx="300" cy="280" r="1.5" fill="#3b82f6"/>
+    <circle cx="375" cy="280" r="1.5" fill="#3b82f6"/>
+    <circle cx="450" cy="280" r="1.5" fill="#3b82f6"/>
+    <circle cx="525" cy="280" r="1.5" fill="#3b82f6"/>
+    <circle cx="600" cy="280" r="1.5" fill="#3b82f6"/>
+    <circle cx="675" cy="280" r="1.5" fill="#3b82f6"/>
+    <circle cx="750" cy="280" r="1.5" fill="#3b82f6"/>
+    <circle cx="825" cy="280" r="1.5" fill="#3b82f6"/>
+  </g>
+
+  <!-- ===== CARD 1: WRITE ===== -->
+  <rect x="60" y="80" width="200" height="180" rx="14" fill="url(#cardBg)" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="60" y="80" width="200" height="180" rx="14" fill="url(#cardGlow1)"/>
+  <!-- Step number -->
+  <circle cx="100" cy="118" r="18" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="100" y="124" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#60a5fa">1</text>
+  <!-- Doc / file icon -->
+  <g filter="url(#glow)" transform="translate(135, 95)">
+    <rect x="0" y="0" width="32" height="40" rx="4" fill="none" stroke="#3b82f6" stroke-width="1.8"/>
+    <path d="M22 0 L22 12 L32 12" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
+    <line x1="6"  y1="18" x2="26" y2="18" stroke="#3b82f6" stroke-width="1.5" opacity="0.6"/>
+    <line x1="6"  y1="24" x2="26" y2="24" stroke="#3b82f6" stroke-width="1.5" opacity="0.6"/>
+    <line x1="6"  y1="30" x2="18" y2="30" stroke="#3b82f6" stroke-width="1.5" opacity="0.6"/>
+    <!-- .sol extension hint -->
+    <rect x="0" y="28" width="32" height="12" rx="0 0 4 4" fill="#1e3a5f" opacity="0.8"/>
+    <text x="16" y="38" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" fill="#60a5fa">.sol</text>
+  </g>
+  <text x="160" y="162" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#60a5fa">WRITE</text>
+  <text x="160" y="180" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#93c5fd" opacity="0.75">Solidity</text>
+  <text x="160" y="196" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#93c5fd" opacity="0.75">Source Code</text>
+  <!-- Tag chips -->
+  <rect x="82" y="218" width="50" height="20" rx="10" fill="#1e3a5f"/>
+  <text x="107" y="231" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">.sol</text>
+  <rect x="140" y="218" width="56" height="20" rx="10" fill="#1e3a5f"/>
+  <text x="168" y="231" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">Solidity</text>
+
+  <!-- ===== ARROW 1→2 ===== -->
+  <g filter="url(#arrowGlow)">
+    <line x1="264" y1="170" x2="316" y2="170" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrowHeadGlow)"/>
+  </g>
+  <line x1="264" y1="170" x2="316" y2="170" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowHead)"/>
+  <!-- Label on arrow -->
+  <rect x="268" y="148" width="44" height="18" rx="9" fill="#0a0a0a" stroke="#3b82f6" stroke-width="1" opacity="0.9"/>
+  <text x="290" y="160" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">solc</text>
+
+  <!-- ===== CARD 2: COMPILE ===== -->
+  <rect x="320" y="80" width="260" height="180" rx="14" fill="url(#cardBg)" stroke="#60a5fa" stroke-width="2"/>
+  <rect x="320" y="80" width="260" height="180" rx="14" fill="url(#cardGlow2)"/>
+  <!-- Glow top highlight for active card -->
+  <rect x="320" y="80" width="260" height="4" rx="14" fill="#60a5fa" opacity="0.6"/>
+  <!-- Step number -->
+  <circle cx="362" cy="118" r="18" fill="#1e3a8a" stroke="#60a5fa" stroke-width="2"/>
+  <text x="362" y="124" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#bfdbfe">2</text>
+  <!-- Gear / compiler icon -->
+  <g filter="url(#glow)" transform="translate(405, 92)">
+    <!-- Gear teeth -->
+    <circle cx="22" cy="22" r="12" fill="none" stroke="#60a5fa" stroke-width="2"/>
+    <circle cx="22" cy="22" r="5" fill="#60a5fa" opacity="0.8"/>
+    <!-- teeth -->
+    <rect x="19" y="7"  width="6" height="6" rx="1" fill="#60a5fa" opacity="0.7"/>
+    <rect x="19" y="31" width="6" height="6" rx="1" fill="#60a5fa" opacity="0.7"/>
+    <rect x="7"  y="19" width="6" height="6" rx="1" fill="#60a5fa" opacity="0.7"/>
+    <rect x="31" y="19" width="6" height="6" rx="1" fill="#60a5fa" opacity="0.7"/>
+    <!-- diagonal teeth -->
+    <rect x="10" y="10" width="5" height="5" rx="1" fill="#60a5fa" opacity="0.5" transform="rotate(45 12.5 12.5)"/>
+    <rect x="29" y="10" width="5" height="5" rx="1" fill="#60a5fa" opacity="0.5" transform="rotate(45 31.5 12.5)"/>
+    <rect x="10" y="29" width="5" height="5" rx="1" fill="#60a5fa" opacity="0.5" transform="rotate(45 12.5 31.5)"/>
+    <rect x="29" y="29" width="5" height="5" rx="1" fill="#60a5fa" opacity="0.5" transform="rotate(45 31.5 31.5)"/>
+  </g>
+  <text x="450" y="162" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#bfdbfe">COMPILE</text>
+  <text x="450" y="180" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#93c5fd" opacity="0.8">Bytecode + ABI</text>
+  <text x="450" y="196" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#93c5fd" opacity="0.8">untuk EVM</text>
+  <!-- Tag chips -->
+  <rect x="334" y="218" width="66" height="20" rx="10" fill="#1e3a8a"/>
+  <text x="367" y="231" text-anchor="middle" font-family="monospace" font-size="9" fill="#bfdbfe">bytecode</text>
+  <rect x="410" y="218" width="40" height="20" rx="10" fill="#1e3a8a"/>
+  <text x="430" y="231" text-anchor="middle" font-family="monospace" font-size="9" fill="#bfdbfe">ABI</text>
+  <rect x="460" y="218" width="52" height="20" rx="10" fill="#1e3a8a"/>
+  <text x="486" y="231" text-anchor="middle" font-family="monospace" font-size="9" fill="#bfdbfe">artifact</text>
+
+  <!-- ===== ARROW 2→3 ===== -->
+  <g filter="url(#arrowGlow)">
+    <line x1="584" y1="170" x2="636" y2="170" stroke="#60a5fa" stroke-width="2" marker-end="url(#arrowHeadGlow)"/>
+  </g>
+  <line x1="584" y1="170" x2="636" y2="170" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowHead)"/>
+  <!-- Label on arrow -->
+  <rect x="582" y="148" width="60" height="18" rx="9" fill="#0a0a0a" stroke="#3b82f6" stroke-width="1" opacity="0.9"/>
+  <text x="612" y="160" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">deploy tx</text>
+
+  <!-- ===== CARD 3: DEPLOY ===== -->
+  <rect x="640" y="80" width="200" height="180" rx="14" fill="url(#cardBg)" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="640" y="80" width="200" height="180" rx="14" fill="url(#cardGlow1)"/>
+  <!-- Step number -->
+  <circle cx="680" cy="118" r="18" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="680" y="124" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#60a5fa">3</text>
+  <!-- Chain-link icon -->
+  <g filter="url(#glow)" transform="translate(716, 93)">
+    <!-- Block chain illustration -->
+    <rect x="0"  y="4"  width="22" height="16" rx="3" fill="none" stroke="#3b82f6" stroke-width="1.8"/>
+    <rect x="2"  y="7"  width="18" height="4"  rx="1" fill="#3b82f6" opacity="0.5"/>
+    <rect x="2"  y="13" width="12" height="3"  rx="1" fill="#3b82f6" opacity="0.3"/>
+    <line x1="22" y1="12" x2="28" y2="12" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="25" cy="12" r="2.5" fill="#3b82f6"/>
+    <rect x="28" y="4" width="22" height="16" rx="3" fill="none" stroke="#60a5fa" stroke-width="1.8"/>
+    <rect x="30" y="7" width="18" height="4"  rx="1" fill="#60a5fa" opacity="0.5"/>
+    <rect x="30" y="13" width="12" height="3"  rx="1" fill="#60a5fa" opacity="0.3"/>
+    <!-- Address badge -->
+    <rect x="5" y="25" width="48" height="14" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+    <text x="29" y="35" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" fill="#60a5fa">0x1234…</text>
+  </g>
+  <text x="740" y="162" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="700" fill="#60a5fa">DEPLOY</text>
+  <text x="740" y="180" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#93c5fd" opacity="0.75">On-chain</text>
+  <text x="740" y="196" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#93c5fd" opacity="0.75">Contract Address</text>
+  <!-- Tag chips -->
+  <rect x="655" y="218" width="62" height="20" rx="10" fill="#1e3a5f"/>
+  <text x="686" y="231" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">immutable</text>
+  <rect x="726" y="218" width="48" height="20" rx="10" fill="#1e3a5f"/>
+  <text x="750" y="231" text-anchor="middle" font-family="monospace" font-size="9" fill="#60a5fa">0xAddr</text>
+
+  <!-- Bottom description row -->
+  <text x="160" y="290" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#60a5fa" opacity="0.55">Tulis logika bisnis</text>
+  <text x="450" y="290" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#60a5fa" opacity="0.55">Konversi ke instruksi EVM</text>
+  <text x="740" y="290" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" fill="#60a5fa" opacity="0.55">Permanen di blockchain</text>
+
+  <!-- Decorative bottom line -->
+  <line x1="60" y1="310" x2="840" y2="310" stroke="#3b82f6" stroke-width="0.5" opacity="0.2"/>
+  <text x="450" y="328" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#3b82f6" opacity="0.4" letter-spacing="2">ETHEREUM · EVM · SMART CONTRACT LIFECYCLE</text>
+</svg>

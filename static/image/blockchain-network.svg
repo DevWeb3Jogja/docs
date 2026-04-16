@@ -1,0 +1,144 @@
+<svg width="900" height="500" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="nodeGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </radialGradient>
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blockGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0d1f3c"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="500" fill="#0a0a0a"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.05">
+    <line x1="0" y1="100" x2="900" y2="100" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="200" x2="900" y2="200" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="300" x2="900" y2="300" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="400" x2="900" y2="400" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="150" y1="0" x2="150" y2="500" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="500" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="450" y1="0" x2="450" y2="500" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="500" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="750" y1="0" x2="750" y2="500" stroke="#3b82f6" stroke-width="0.5"/>
+  </g>
+
+  <!-- Connection lines between nodes -->
+  <g stroke="#3b82f6" stroke-width="1.2" opacity="0.3">
+    <line x1="450" y1="250" x2="200" y2="130"/>
+    <line x1="450" y1="250" x2="700" y2="130"/>
+    <line x1="450" y1="250" x2="150" y2="320"/>
+    <line x1="450" y1="250" x2="750" y2="320"/>
+    <line x1="450" y1="250" x2="320" y2="420"/>
+    <line x1="450" y1="250" x2="580" y2="420"/>
+    <line x1="200" y1="130" x2="450" y2="90"/>
+    <line x1="700" y1="130" x2="450" y2="90"/>
+    <line x1="200" y1="130" x2="90" y2="200"/>
+    <line x1="700" y1="130" x2="810" y2="200"/>
+    <line x1="150" y1="320" x2="90" y2="200"/>
+    <line x1="750" y1="320" x2="810" y2="200"/>
+    <line x1="150" y1="320" x2="320" y2="420"/>
+    <line x1="750" y1="320" x2="580" y2="420"/>
+    <line x1="200" y1="130" x2="150" y2="320"/>
+    <line x1="700" y1="130" x2="750" y2="320"/>
+    <line x1="320" y1="420" x2="580" y2="420"/>
+  </g>
+
+  <!-- Animated data-transfer lines -->
+  <g stroke="#60a5fa" stroke-width="1.5" opacity="0.55">
+    <line x1="450" y1="250" x2="200" y2="130" stroke-dasharray="6 8">
+      <animate attributeName="stroke-dashoffset" values="0;-28" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="450" y1="250" x2="750" y2="320" stroke-dasharray="6 8">
+      <animate attributeName="stroke-dashoffset" values="0;-28" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="200" y1="130" x2="90" y2="200" stroke-dasharray="6 8">
+      <animate attributeName="stroke-dashoffset" values="0;-28" dur="1.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="700" y1="130" x2="810" y2="200" stroke-dasharray="6 8">
+      <animate attributeName="stroke-dashoffset" values="0;-28" dur="2.2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Chained blocks in center -->
+  <g filter="url(#softglow)" opacity="0.9">
+    <!-- Block 1 -->
+    <rect x="325" y="218" width="52" height="42" rx="5" fill="url(#blockGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="331" y="225" width="40" height="6" rx="2" fill="#3b82f6" opacity="0.6"/>
+    <rect x="331" y="235" width="30" height="4" rx="1" fill="#3b82f6" opacity="0.3"/>
+    <rect x="331" y="242" width="36" height="4" rx="1" fill="#3b82f6" opacity="0.3"/>
+    <!-- Chain -->
+    <line x1="377" y1="239" x2="418" y2="239" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="388" cy="239" r="3.5" fill="#3b82f6"/>
+    <circle cx="407" cy="239" r="3.5" fill="#3b82f6"/>
+    <!-- Block 2 (highlighted) -->
+    <rect x="418" y="218" width="52" height="42" rx="5" fill="url(#blockGrad)" stroke="#60a5fa" stroke-width="2"/>
+    <rect x="424" y="225" width="40" height="6" rx="2" fill="#60a5fa" opacity="0.7"/>
+    <rect x="424" y="235" width="30" height="4" rx="1" fill="#60a5fa" opacity="0.4"/>
+    <rect x="424" y="242" width="36" height="4" rx="1" fill="#60a5fa" opacity="0.4"/>
+    <!-- Chain -->
+    <line x1="470" y1="239" x2="511" y2="239" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="481" cy="239" r="3.5" fill="#3b82f6"/>
+    <circle cx="500" cy="239" r="3.5" fill="#3b82f6"/>
+    <!-- Block 3 -->
+    <rect x="511" y="218" width="52" height="42" rx="5" fill="url(#blockGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+    <rect x="517" y="225" width="40" height="6" rx="2" fill="#3b82f6" opacity="0.6"/>
+    <rect x="517" y="235" width="30" height="4" rx="1" fill="#3b82f6" opacity="0.3"/>
+    <rect x="517" y="242" width="36" height="4" rx="1" fill="#3b82f6" opacity="0.3"/>
+  </g>
+
+  <!-- Glow halos behind nodes -->
+  <circle cx="450" cy="250" r="36" fill="url(#nodeGlow)"/>
+  <circle cx="200" cy="130" r="28" fill="url(#nodeGlow)"/>
+  <circle cx="700" cy="130" r="28" fill="url(#nodeGlow)"/>
+  <circle cx="150" cy="320" r="24" fill="url(#nodeGlow)"/>
+  <circle cx="750" cy="320" r="24" fill="url(#nodeGlow)"/>
+  <circle cx="320" cy="420" r="22" fill="url(#nodeGlow)"/>
+  <circle cx="580" cy="420" r="22" fill="url(#nodeGlow)"/>
+  <circle cx="90"  cy="200" r="20" fill="url(#nodeGlow)"/>
+  <circle cx="810" cy="200" r="20" fill="url(#nodeGlow)"/>
+  <circle cx="450" cy="90"  r="22" fill="url(#nodeGlow)"/>
+
+  <!-- Node circles -->
+  <g filter="url(#glow)">
+    <circle cx="450" cy="250" r="16" fill="url(#nodeGrad)"/>
+    <circle cx="200" cy="130" r="13" fill="url(#nodeGrad)"/>
+    <circle cx="700" cy="130" r="13" fill="url(#nodeGrad)"/>
+    <circle cx="150" cy="320" r="11" fill="url(#nodeGrad)"/>
+    <circle cx="750" cy="320" r="11" fill="url(#nodeGrad)"/>
+    <circle cx="320" cy="420" r="10" fill="url(#nodeGrad)"/>
+    <circle cx="580" cy="420" r="10" fill="url(#nodeGrad)"/>
+    <circle cx="90"  cy="200" r="9"  fill="url(#nodeGrad)"/>
+    <circle cx="810" cy="200" r="9"  fill="url(#nodeGrad)"/>
+    <circle cx="450" cy="90"  r="10" fill="url(#nodeGrad)"/>
+  </g>
+
+  <!-- Bright specular highlight on nodes -->
+  <g opacity="0.75">
+    <circle cx="450" cy="247" r="5"   fill="#bfdbfe"/>
+    <circle cx="200" cy="127" r="4"   fill="#bfdbfe"/>
+    <circle cx="700" cy="127" r="4"   fill="#bfdbfe"/>
+    <circle cx="150" cy="317" r="3.5" fill="#bfdbfe"/>
+    <circle cx="750" cy="317" r="3.5" fill="#bfdbfe"/>
+    <circle cx="320" cy="417" r="3"   fill="#bfdbfe"/>
+    <circle cx="580" cy="417" r="3"   fill="#bfdbfe"/>
+    <circle cx="90"  cy="197" r="2.5" fill="#bfdbfe"/>
+    <circle cx="810" cy="197" r="2.5" fill="#bfdbfe"/>
+    <circle cx="450" cy="87"  r="3"   fill="#bfdbfe"/>
+  </g>
+</svg>
