@@ -1,6 +1,6 @@
 const path = require('path');
 
-const BASE_URL = '/docs-devweb3jogja/';
+const BASE_URL = '/docs/';
 
 module.exports = {
   title: 'DevWeb3Jogja',
