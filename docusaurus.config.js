@@ -16,7 +16,7 @@ module.exports = {
   },
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'image/devweb3jogja.jpg',
+  favicon: 'image/devweb3jogja.png',
   organizationName: 'DevWeb3Jogja',
   projectName: 'docs-devweb3jogja',
   trailingSlash: true,
@@ -64,28 +64,16 @@ module.exports = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      hideOnScroll: true,
+      hideOnScroll: false,
       title: 'DevWeb3Jogja',
       logo: {
         alt: 'DevWeb3Jogja Logo',
-        src: 'image/devweb3jogja2.jpg',
-        srcDark: 'image/devweb3jogja2.jpg',
+        src: 'image/devweb3jogja2.png',
+        srcDark: 'image/devweb3jogja2.png',
         href: '/',
         target: '_self',
       },
       items: [
-        {
-          type: 'doc',
-          docId: 'index',
-          label: 'Docs',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'evm/index',
-          label: 'EVM',
-          position: 'left',
-        },
         {
           type: 'search',
           position: 'right',
@@ -138,7 +126,7 @@ module.exports = {
       ],
       logo: {
         alt: 'DevWeb3Jogja Logo',
-        src: 'image/devweb3jogja2.jpg',
+        src: 'image/devweb3jogja2.png',
         href: 'https://devweb3jogja.id',
         width: 120,
       },

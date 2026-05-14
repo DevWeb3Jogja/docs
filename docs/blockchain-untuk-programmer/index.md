@@ -20,10 +20,10 @@ Section ini dirancang sebagai **jembatan** dari dunia yang kamu tahu ke dunia bl
 | [Wallet & Account](./wallet-account) | Public key = identitas, private key = kunci satu-satunya |
 | [Transaksi & Gas](./transaksi-gas) | Membaca gratis, menulis berbayar, lifecycle transaksi |
 | [Smart Contract](./smart-contract) | Kode yang hidup di blockchain, ABI, immutable setelah deploy |
-| [Testnet & Tools Dasar](./testnet-tools) | Setup Sepolia, faucet, Etherscan — checklist siap mulai |
+| [Testnet & Tools Dasar](./testnet-tools) | Testnet, faucet, block explorer — konsep dasar (contoh pakai Sepolia; setup praktik di Persiapan Environment) |
 
 ## Cara Membaca Section Ini
 
-Baca berurutan dari atas ke bawah. Setiap halaman membangun di atas halaman sebelumnya. Di akhir section ini, kamu akan punya fondasi yang cukup untuk memahami mengapa Solidity ditulis dengan cara tertentu — dan mengapa beberapa hal yang terasa aneh di Web3 ternyata masuk akal.
+Baca berurutan dari atas ke bawah. Setiap halaman membangun di atas halaman sebelumnya. Di akhir section ini, kamu akan punya fondasi yang cukup untuk memahami mengapa Solidity ditulis dengan cara tertentu — dan mengapa beberapa hal yang terasa aneh di Web3 ternyata masuk akal. Setelah itu, lanjut ke **[Persiapan Environment](../persiapan/index.md)** untuk menyiapkan komputermu, baru ke **[Writing First Contract](../evm/index.md)**.
 
 Mari mulai dari dasarnya: [Apa itu Blockchain?](./apa-itu-blockchain)

@@ -83,7 +83,7 @@ Kalau kamu terbiasa dengan HTTP request yang synchronous (kirim request → tung
 7. Setelah beberapa blok konfirmasi → transaksi dianggap final
 ```
 
-**Waktu konfirmasi:** Di Ethereum Mainnet sekitar 12 detik per blok. Di testnet Sepolia bisa bervariasi. Di L2 seperti Base bisa lebih cepat.
+**Waktu konfirmasi:** Di Ethereum Mainnet sekitar 12 detik per blok. Di testnet Sepolia bisa bervariasi. Di chain lain seperti L2 (Base, Optimism) atau BNB Smart Chain umumnya jauh lebih cepat — beberapa detik saja per blok.
 
 **Analogi programmer:** Lifecycle transaksi itu seperti message queue (seperti RabbitMQ atau Kafka):
 - Kamu publish message (broadcast transaksi)

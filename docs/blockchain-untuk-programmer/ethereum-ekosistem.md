@@ -25,21 +25,22 @@ Ethereum bukan hanya menyimpan data transaksi keuangan. Ethereum menyimpan dan m
 
 ## Kenapa Banyak Chain Lain Kompatibel dengan Ethereum?
 
-Kamu mungkin sering mendengar nama seperti **Base**, **Optimism**, **Arbitrum**, atau **Polygon**. Ini semua adalah blockchain yang berbeda dari Ethereum Mainnet — tapi semuanya **EVM-compatible**.
+Kamu mungkin sering mendengar nama seperti **BNB Smart Chain**, **Base**, **Optimism**, **Arbitrum**, atau **Polygon**. Ini semua adalah blockchain yang berbeda dari Ethereum Mainnet — tapi semuanya **EVM-compatible**.
 
-Artinya, mereka menggunakan spesifikasi EVM yang sama. Kode Solidity yang kamu tulis untuk Ethereum bisa langsung di-deploy ke Base, Optimism, atau Arbitrum **tanpa perubahan apapun**.
+Artinya, mereka menggunakan spesifikasi EVM yang sama. Kode Solidity yang kamu tulis untuk Ethereum bisa langsung di-deploy ke BNB Smart Chain, Base, Optimism, atau yang lain **tanpa perubahan apapun**.
 
-Kenapa ada banyak chain ini? Karena Ethereum Mainnet mahal dan lambat untuk beberapa use case. Chain-chain ini (disebut **Layer 2** atau **L2**) dibangun di atas Ethereum untuk memberikan transaksi yang lebih cepat dan murah, sambil mewarisi keamanan dari Ethereum.
+Kenapa ada banyak chain ini? Karena Ethereum Mainnet mahal dan lambat untuk beberapa use case. Sebagian dibangun **di atas** Ethereum sebagai **Layer 2 (L2)** — lebih cepat & murah, sambil mewarisi keamanan Ethereum (contoh: Base, Optimism, Arbitrum). Sebagian lagi adalah **chain L1 independen yang EVM-compatible** — punya validator & konsensus sendiri, bukan turunan Ethereum, tapi tetap menjalankan kontrak Solidity yang sama (contoh: **BNB Smart Chain**).
 
 | Chain | Tipe | Kegunaan Utama | Biaya Gas Relatif |
 |---|---|---|---|
 | Ethereum | L1 (Mainnet) | DeFi high-value, NFT prestisius | Tinggi |
+| BNB Smart Chain | L1 independen (EVM-compatible) | DeFi, ritel, gaming, ekosistem besar di Asia | Rendah |
 | Base | L2 (Optimistic) | Consumer apps, onboarding massal | Sangat Rendah |
 | Optimism | L2 (Optimistic) | DeFi, governance | Rendah |
 | Arbitrum | L2 (Optimistic) | DeFi, gaming | Rendah |
 | Polygon | Sidechain/L2 | Gaming, NFT, enterprise | Sangat Rendah |
 
-Untuk belajar di kursus ini, kita akan menggunakan **Sepolia** (testnet Ethereum) dan **Base Sepolia** (testnet Base) — jadi kamu tidak perlu khawatir soal biaya.
+Untuk belajar di docs ini, kita banyak memakai **Sepolia** — testnet resmi Ethereum L1 — sebagai contoh kanonik. Tapi karena semua chain di atas EVM-compatible, konsep & kode yang sama berlaku di mana pun: kalau kamu mau memakai **Base**, **BNB Smart Chain**, **Polygon**, atau yang lain, kamu hanya perlu mengganti konfigurasi jaringannya — sisanya identik.
 
 ## Mainnet vs Testnet: Production vs Staging
 
@@ -53,15 +54,17 @@ Ini konsep yang sangat penting dan paling sering membingungkan pemula:
 
 > **Aturan pertama development blockchain: SELALU kerjakan di testnet terlebih dahulu. Jangan pernah deploy langsung ke mainnet tanpa testing yang matang.**
 
-Testnet yang akan kita gunakan:
-- **Sepolia** — testnet resmi Ethereum, paling stabil untuk development
-- **Base Sepolia** — testnet untuk Base chain, digunakan di modul Frontend
+Testnet yang umum dipakai:
+- **Sepolia** — testnet resmi Ethereum L1, paling stabil & paling banyak dijadikan contoh. Ini yang dipakai sebagai contoh di docs ini.
+- **Testnet dari chain EVM lain** — mis. **Base Sepolia** (untuk Base), **BNB Smart Chain Testnet** (untuk BNB Smart Chain), **Polygon Amoy**, dll. Konsepnya identik dengan Sepolia; yang beda hanya chain ID, RPC URL, dan faucet-nya.
+
+> Apa pun chain-nya, langkah setup-nya sama: pasang wallet → tambah jaringan → ambil token dari faucet → cek di block explorer. Detailnya ada di [Persiapan Environment → Wallet & Testnet](../persiapan/wallet-testnet.md) (lengkap dengan tabel parameter beberapa testnet umum).
 
 ## Block Explorer: DevTools untuk Blockchain
 
 Kalau kamu terbiasa membuka Browser DevTools untuk inspect network request, di blockchain kamu menggunakan **block explorer**.
 
-**Etherscan** (etherscan.io) adalah block explorer paling populer. Untuk Sepolia: [sepolia.etherscan.io](https://sepolia.etherscan.io)
+**Etherscan** (etherscan.io) adalah block explorer paling populer. Untuk Sepolia: [sepolia.etherscan.io](https://sepolia.etherscan.io). Setiap chain punya explorer-nya sendiri dengan tampilan yang mirip — mis. [basescan.org](https://basescan.org) untuk Base, [bscscan.com](https://bscscan.com) untuk BNB Smart Chain (dan [testnet.bscscan.com](https://testnet.bscscan.com) untuk testnet-nya).
 
 Di block explorer kamu bisa:
 - Melihat detail setiap transaksi (siapa mengirim ke siapa, berapa gas yang dipakai)
@@ -69,7 +72,7 @@ Di block explorer kamu bisa:
 - Membaca kode smart contract yang sudah di-verify
 - Memonitor event yang di-emit kontrak
 
-Kamu akan sering membuka Etherscan saat debugging. Bookmark sekarang.
+Kamu akan sering membuka block explorer saat debugging.
 
 ---
 

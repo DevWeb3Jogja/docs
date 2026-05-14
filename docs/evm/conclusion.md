@@ -17,12 +17,15 @@ Di bagian ini, kamu sudah mempelajari fondasi penting untuk menulis smart contra
 
 **Tentang desain Vault**: Sistem shares adalah cara elegan untuk merepresentasikan kepemilikan proporsional. Pastikan rumus perhitungan shares sudah benar: perkalian sebelum pembagian, dan validasi bahwa shares yang dihasilkan tidak nol.
 
-## Langkah Selanjutnya yang Bisa Kamu Eksplorasi
+## Lanjut ke Mana?
 
-- Mengintegrasikan yield generation ke dalam Vault (konsep dasar ERC4626).
-- Menulis fuzz test di Foundry menggunakan `function testFuzz_*`.
-- Mempelajari proxy pattern untuk kontrak yang upgradeable.
-- Memahami gas optimization lebih dalam: packing variables, `calldata` vs `memory`, dan penggunaan `immutable`.
+Kontrak sudah jadi — sekarang waktunya membuatnya bisa dipakai orang dan terhubung ke aplikasi:
+
+- **[Frontend →](../frontend/pengenalan.md)** — bangun UI dApp yang terhubung wallet (wagmi + viem + RainbowKit), membaca & menulis ke kontrak yang baru kamu buat.
+- **[Developer Tools →](../developer-tools/index.md)** — `viem` untuk berinteraksi dengan kontrak dari script/backend, dan `Ponder` untuk meng-index event kontrak jadi API.
+- **[Advanced Topics →](../advanced-topics/index.md)** — proxy pattern & kontrak upgradeable (UUPS), Uniswap V4 Hooks, x402 Protocol.
+
+Ide eksplorasi lain di level kontrak: integrasi yield generation ke Vault (konsep dasar ERC4626), fuzz test di Foundry (`function testFuzz_*`), dan gas optimization (packing variables, `calldata` vs `memory`, `immutable`).
 
 ---
 
