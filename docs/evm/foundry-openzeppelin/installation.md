@@ -5,6 +5,10 @@ sidebar_label: Instalasi Foundry dan OpenZeppelin
 
 # Instalasi Foundry dan OpenZeppelin
 
+:::tip Sudah selesai Persiapan Environment?
+Kalau kamu sudah mengikuti [Persiapan Environment → Tools Development](../../persiapan/tools-development.md), Foundry sudah terpasang (`forge --version` jalan). Lewati bagian "Instalasi Foundry" di bawah dan langsung ke [Inisialisasi Project](#inisialisasi-project).
+:::
+
 ## Instalasi Foundry
 
 Jalankan perintah berikut di terminal:

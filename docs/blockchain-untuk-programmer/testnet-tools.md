@@ -5,100 +5,64 @@ sidebar_label: Testnet & Tools Dasar
 
 # Testnet & Tools Dasar
 
-Kamu sudah memahami konsep-konsepnya. Sekarang saatnya setup environment dan pastikan kamu punya semua tools yang dibutuhkan sebelum mulai menulis kode.
+Sebelum mulai ngoding, ada tiga hal yang perlu kamu kenali secara konsep: **testnet**, **faucet**, dan **block explorer**. Halaman ini menjelaskan ketiganya. Langkah instalasi & setup-nya sendiri ada di section [Persiapan Environment](../persiapan/index.md) — jangan dikerjakan di sini, cukup pahami dulu apa fungsinya.
 
-Di halaman ini kita akan setup:
-- MetaMask terhubung ke Sepolia testnet
-- Test ETH dari faucet
-- Akses ke Etherscan untuk debugging
+## Testnet: Tempat Latihan yang Aman
 
-## 1. Install MetaMask
+**Testnet** adalah jaringan blockchain khusus untuk pengembangan — perilakunya sama dengan mainnet, tapi token native yang dipakai tidak punya nilai nyata dan bisa didapat gratis. Ini "staging server"-nya blockchain: kamu bisa deploy kontrak, kirim transaksi, dan bereksperimen tanpa risiko kehilangan uang.
 
-Jika belum, install MetaMask dari [metamask.io](https://metamask.io) sebagai ekstensi browser.
+Setiap chain EVM punya testnet-nya sendiri. Contoh:
 
-Setelah setup dan membuat akun baru, kamu akan mendapat address Ethereum pertamamu. **Catat dan simpan seed phrase-mu di tempat aman** (untuk akun development saja — jangan pakai akun yang sama untuk menyimpan aset nyata).
+| Testnet | Untuk chain | Chain ID | Block explorer |
+|---|---|---|---|
+| **Sepolia** | Ethereum L1 | `11155111` | [sepolia.etherscan.io](https://sepolia.etherscan.io) |
+| Base Sepolia | Base (L2) | `84532` | [sepolia.basescan.org](https://sepolia.basescan.org) |
+| BNB Smart Chain Testnet | BNB Smart Chain | `97` | [testnet.bscscan.com](https://testnet.bscscan.com) |
 
-## 2. Tambahkan Sepolia Testnet
+Di docs ini, contoh-contoh memakai **Sepolia** karena itu testnet paling kanonik. Tapi yang penting bukan chain-nya — konsepnya identik di semua testnet, dan kamu bebas memakai chain EVM lain (mis. kalau workshop/bootcamp yang kamu ikuti menentukan chain tertentu). [Persiapan Environment → Wallet & Testnet](../persiapan/wallet-testnet.md) menyediakan tabel parameter beberapa testnet umum sebagai rujukan.
 
-By default MetaMask menyembunyikan testnet. Aktifkan:
+## Faucet: Keran Test Token
 
-1. Klik nama network di bagian atas MetaMask (biasanya "Ethereum Mainnet")
-2. Klik tombol **"Add a network"** atau **"Show test networks"**
-3. Toggle **"Show test networks"** ke ON
-4. Pilih **"Sepolia"** dari daftar
+Untuk mengirim transaksi (termasuk men-deploy kontrak), kamu butuh sedikit token native untuk membayar gas. Di testnet, token ini gratis — kamu ambil dari **faucet** ("keran"): kamu tempel alamat wallet-mu, faucet mengirim sejumlah kecil token testnet.
 
-Sekarang MetaMask terhubung ke Sepolia — jaringan development yang aman untuk eksperimen.
+Karena kadang satu faucet sedang kosong atau rate-limited, biasanya ada beberapa pilihan faucet untuk tiap testnet. Daftar faucet (Sepolia & beberapa chain lain) beserta cara klaimnya ada di [Persiapan Environment → Wallet & Testnet](../persiapan/wallet-testnet.md).
 
-## 3. Dapatkan Test ETH dari Faucet
+## Block Explorer: DevTools untuk Blockchain
 
-Di testnet, kamu butuh test ETH untuk membayar gas. Test ETH tidak punya nilai nyata dan bisa didapat gratis dari **faucet**.
+**Block explorer** adalah situs untuk "meng-inspect" apa yang terjadi di blockchain — mirip tab Network di Browser DevTools. Tiap chain punya explorer-nya sendiri (Etherscan untuk Ethereum, Basescan untuk Base, BscScan untuk BNB Smart Chain), dengan tampilan & fitur yang mirip.
 
-Faucet yang bisa digunakan untuk Sepolia:
+Di situ kamu bisa:
+- Melihat detail setiap transaksi (pengirim, penerima, gas yang dipakai, status sukses/gagal, event yang di-emit)
+- Melihat saldo dan riwayat sebuah address
+- Membaca source code smart contract yang sudah di-verify
+- Memverifikasi bahwa transaksi/kontrak kamu benar-benar tercatat on-chain
 
-| Faucet | URL | Kebutuhan |
+Kamu akan sering membukanya saat debugging — bookmark explorer untuk chain yang kamu pakai.
+
+## Tools yang Akan Dipakai (Gambaran)
+
+Selain wallet & block explorer, ini tools utama yang akan kamu pasang dan pakai di materi-materi berikutnya:
+
+| Tool | Fungsi | Dibahas detail di |
 |---|---|---|
-| Alchemy Faucet | [sepoliafaucet.com](https://sepoliafaucet.com) | Akun Alchemy (gratis) |
-| Infura Faucet | [infura.io/faucet](https://www.infura.io/faucet/sepolia) | Akun Infura (gratis) |
-| Chainlink Faucet | [faucets.chain.link](https://faucets.chain.link) | Sign in with wallet |
-| Google Cloud Faucet | [cloud.google.com/application/web3/faucet](https://cloud.google.com/application/web3/faucet/ethereum/sepolia) | Akun Google |
+| **Foundry** (`forge`, `cast`, `anvil`) | Compile, test, deploy smart contract | [Persiapan Environment](../persiapan/tools-development.md) (install) & [Writing First Contract → Foundry & OpenZeppelin](../evm/foundry-openzeppelin/index.md) (penggunaan) |
+| **OpenZeppelin Contracts** | Library kontrak yang sudah diaudit (ERC20, Ownable, ReentrancyGuard, dll) | [Writing First Contract](../evm/index.md) |
+| **Node.js + pnpm** | Runtime & package manager untuk backend & frontend | [Persiapan Environment](../persiapan/tools-development.md) |
+| **viem** | Library TypeScript untuk berinteraksi dengan blockchain | [Developer Tools → Viem](../developer-tools/viem/index.md) |
+| **wagmi + RainbowKit** | Connect wallet & React hooks untuk dApp | [Frontend](../frontend/pengenalan.md) |
+| **Code editor** (VS Code dll) | + ekstensi Solidity | [Persiapan Environment](../persiapan/tools-development.md) |
 
-Cara pakai:
-1. Buka salah satu faucet di atas
-2. Paste address Ethereum kamu (dari MetaMask)
-3. Request test ETH
-4. Tunggu beberapa detik/menit — test ETH akan muncul di MetaMask
+## Kamu Sudah Punya Fondasinya
 
-Biasanya kamu dapat 0.1–0.5 Sepolia ETH, cukup untuk puluhan/ratusan transaksi development.
+Selamat — kamu sudah punya fondasi konseptual untuk Web3 development:
 
-> **Tip:** Simpan beberapa faucet di bookmark. Kadang satu faucet sedang kosong atau maintenance — punya backup itu berguna.
-
-## 4. Verify di Etherscan Sepolia
-
-Buka [sepolia.etherscan.io](https://sepolia.etherscan.io) dan paste address-mu.
-
-Kalau test ETH sudah masuk, kamu akan melihat transaksi faucet di history. Ini konfirmasi bahwa MetaMask kamu sudah terhubung dengan benar ke Sepolia.
-
-Bookmark halaman ini — kamu akan sering kembali ke sini saat debugging.
-
-## Checklist: Siap Mulai Development
-
-Sebelum lanjut ke section berikutnya, pastikan kamu sudah bisa centang semua ini:
-
-- [ ] MetaMask terinstall dan akun sudah dibuat
-- [ ] Seed phrase tersimpan aman
-- [ ] MetaMask terhubung ke **Sepolia** testnet
-- [ ] Saldo Sepolia ETH > 0 (dapat dari faucet)
-- [ ] Bisa melihat transaksi di sepolia.etherscan.io
-
-Kalau semua sudah terceklis, kamu siap!
-
-## Tools yang Akan Kita Gunakan
-
-Selain MetaMask dan Etherscan, ini tools yang akan dipakai di section-section berikutnya:
-
-| Tool | Fungsi | Install |
-|---|---|---|
-| **Foundry** | Framework untuk compile, test, deploy kontrak | Via script (dijelaskan di section EVM) |
-| **OpenZeppelin** | Library kontrak yang sudah diaudit | Via Foundry |
-| **Node.js** | Runtime untuk frontend | [nodejs.org](https://nodejs.org) |
-| **VS Code** | Editor (opsional tapi direkomendasikan) | [code.visualstudio.com](https://code.visualstudio.com) |
-
-Untuk **VS Code**, install ekstensi **Solidity** (dari Nomic Foundation) untuk syntax highlighting dan autocomplete saat menulis kode Solidity.
-
----
-
-## Kamu Sudah Siap
-
-Selamat — kamu sudah punya fondasi konseptual yang dibutuhkan untuk memahami Web3 development:
-
-- **Blockchain** sebagai database distributed, immutable, transparent
-- **Ethereum** sebagai platform komputasi dengan EVM
+- **Blockchain** sebagai database distributed, immutable, transparan
+- **Ethereum & chain EVM lain** (L2 maupun L1 independen seperti BNB Smart Chain) sebagai platform komputasi dengan EVM
 - **Wallet & private key** sebagai sistem identitas kriptografi
 - **Transaksi & gas** sebagai mekanisme eksekusi dan pembayaran
 - **Smart contract** sebagai program yang hidup di blockchain
+- **Testnet, faucet, block explorer** — dengan **Sepolia** sebagai contoh, dan tahu bahwa polanya sama untuk chain EVM lain
 
-Dan kamu sudah punya environment yang siap.
+Sekarang saatnya menyiapkan komputermu untuk mulai ngoding.
 
-Sekarang saatnya mulai menulis kode. Section berikutnya akan memandu kamu membuat smart contract pertamamu dari nol menggunakan Foundry dan OpenZeppelin.
-
-Lanjut ke [Writing First Contract →](/evm/)
+Lanjut ke [Persiapan Environment →](../persiapan/index.md)

@@ -56,6 +56,85 @@ html[data-theme='light'] {
 }
 
 /* ============================================================
+   NAVBAR LOGO — disamakan di .navbar (desktop) dan .navbar-sidebar
+   (drawer mobile / hamburger menu).
+   Note: sidebarLogo (logo cadangan di atas docs sidebar) tidak relevan
+   lagi karena hideOnScroll: false → Docusaurus tidak merendernya.
+   ============================================================ */
+:root {
+    --ifm-navbar-height: 72px;
+    --dw3-logo-height: 48px;
+}
+
+.navbar__brand {
+    margin-right: 1.5rem;
+}
+
+.navbar__logo {
+    height: var(--dw3-logo-height);
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar__logo img {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+
+/* Header di dalam drawer mobile — tinggi & padding-nya disamakan dengan navbar
+   utama biar logo-nya nggak ke-squash atau berbeda ukuran. */
+.navbar-sidebar__brand {
+    height: var(--ifm-navbar-height);
+    min-height: var(--ifm-navbar-height);
+    flex: 0 0 var(--ifm-navbar-height);
+}
+
+.navbar-sidebar__brand .navbar__logo {
+    height: var(--dw3-logo-height);
+}
+
+.navbar-sidebar__brand .navbar__logo img {
+    height: 100%;
+    width: auto;
+}
+
+/* ============================================================
+   BREADCRUMB di NAVBAR — fixed di area kosong navbar (setelah sidebar),
+   biar selalu kelihatan & nggak makan tempat di area konten.
+   ============================================================ */
+@media (min-width: 997px) {
+    /* Breadcrumb aslinya dirender di dalam <article> konten. Di-fixed-kan
+       ke posisi navbar (top: 0, kiri = setelah sidebar). */
+    .theme-doc-breadcrumbs {
+        position: fixed;
+        top: 0;
+        left: var(--doc-sidebar-width, 300px);
+        right: calc(220px); /* sisain ruang buat search + GitHub + theme toggle */
+        height: var(--ifm-navbar-height);
+        display: flex;
+        align-items: center;
+        margin: 0 !important;
+        padding: 0 1.5rem;
+        z-index: calc(var(--ifm-z-index-fixed) + 1);
+        pointer-events: none; /* container tidak nangkep klik */
+        background: transparent;
+    }
+
+    /* Link/teks di dalam breadcrumb tetap bisa di-klik */
+    .theme-doc-breadcrumbs > *,
+    .theme-doc-breadcrumbs a,
+    .theme-doc-breadcrumbs li {
+        pointer-events: auto;
+    }
+
+    .theme-doc-breadcrumbs .breadcrumbs {
+        margin: 0;
+    }
+}
+
+/* ============================================================
    TYPOGRAPHY & READING EXPERIENCE
    ============================================================ */
 

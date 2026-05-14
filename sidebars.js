@@ -24,6 +24,19 @@ module.exports = {
     },
     {
       type: "category",
+      label: "Persiapan Environment",
+      collapsed: false,
+      link: {
+        type: "doc",
+        id: "persiapan/index",
+      },
+      items: [
+        "persiapan/tools-development",
+        "persiapan/wallet-testnet",
+      ],
+    },
+    {
+      type: "category",
       label: "Writing First Contract",
       collapsed: false,
       items: [

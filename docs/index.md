@@ -22,16 +22,19 @@ Fondasi konseptual yang kamu butuhkan sebelum menulis satu baris kode pun. Block
 
 **Mulai di sini jika kamu baru di Web3.**
 
-### 2. Writing First Contract
+### 2. Persiapan Environment
+Apa saja yang perlu di-install sebelum mulai membuat smart contract atau dApp: Node.js, pnpm, Git, code editor, Foundry (plus WSL2 untuk pengguna Windows), bikin wallet, dan masuk ke jaringan testnet.
+
+### 3. Writing First Contract
 Menulis smart contract pertamamu menggunakan Foundry dan OpenZeppelin. Mencakup ERC20 token, vault contract, dan unit testing.
 
-### 3. Frontend
+### 4. Frontend
 Menghubungkan frontend (React/Next.js) ke smart contract menggunakan wagmi dan viem.
 
-### 4. Developer Tools
+### 5. Developer Tools
 Tools ekosistem Web3: Ponder untuk indexing, viem sebagai library interaksi kontrak.
 
-### 5. Advanced Topics
+### 6. Advanced Topics
 Topik lanjutan: Uniswap V4 Hooks, UUPS Upgradeable contracts, dan x402 Protocol.
 
 ## Mulai Belajar

@@ -99,19 +99,15 @@ Fungsi wallet:
 
 **Analogi programmer:** Wallet itu seperti password manager (1Password, Bitwarden) — dia tidak menyimpan "uangmu", dia menyimpan kunci yang memberimu akses ke uangmu di blockchain.
 
-## Setup MetaMask untuk Development
+### Wallet Modern: Embedded Wallet
 
-Untuk mengikuti kursus ini, kamu perlu MetaMask:
+Selain wallet "klasik" seperti MetaMask (yang pakai seed phrase dan dipasang sebagai ekstensi browser), sekarang banyak aplikasi pakai **embedded wallet** — wallet yang dibuat otomatis saat kamu login pakai email/akun sosial, tanpa kamu perlu mengurus seed phrase, dan sering dipasangkan dengan transaksi _gasless_ (biaya gas ditanggung aplikasi). Tujuannya: menurunkan friction untuk pengguna baru. Di balik layar tetap ada kunci kriptografi — cuma pengelolaannya disembunyikan.
 
-1. **Install MetaMask** dari [metamask.io](https://metamask.io) (ekstensi browser Chrome/Firefox/Brave)
-2. **Buat akun baru** → ikuti wizard setup
-3. **Simpan seed phrase** di tempat aman (untuk development, bisa di notes — tapi JANGAN untuk akun yang menyimpan uang sungguhan)
-4. **Tambahkan Sepolia Testnet:**
-   - Buka MetaMask → klik nama network di atas (biasanya "Ethereum Mainnet")
-   - Aktifkan "Show test networks"
-   - Pilih "Sepolia"
+Kamu akan tahu kapan memakai yang mana saat masuk ke materi praktik.
 
-Setelah setup, kamu akan punya address Ethereum pertamamu — ini yang akan kita gunakan sepanjang kursus.
+:::tip Mau langsung setup wallet?
+Langkah praktis membuat wallet, menambahkan jaringan testnet, dan mengambil ETH testnet ada di [**Persiapan Environment → Wallet & Testnet**](../persiapan/wallet-testnet.md). Halaman ini fokus ke konsepnya saja.
+:::
 
 ---
 
